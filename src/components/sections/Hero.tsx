@@ -1,7 +1,6 @@
 // src/components/sections/Hero.tsx
 import { profile } from "../../data/profile";
 import Ballpit from "../Ballpit";
-import DecayCard from "../DecayCard"; // <-- import it here
 
 const Hero = () => {
   return (
@@ -57,18 +56,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* RIGHT — Decay Card */}
-          <div className="hidden md:block"> 
-            <DecayCard
-              width={220}
-              height={320}
-              image="https://picsum.photos/300/400?grayscale" // replace with your photo URL
-            >
-              <h2 className="text-white text-xl font-bold">
-                {/* Optional title inside card */}
-              </h2>
-            </DecayCard>
-          </div>
+          
+         
 
         </div>
       </div>
