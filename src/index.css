@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -72,8 +71,6 @@ button:focus-visible {
   }
 }
 
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -128,9 +125,10 @@ button:focus-visible {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+  .theme {
+    --animate-aurora: aurora 60s linear infinite;
+  }
 }
-
-
 
 @layer base {
   * {
@@ -138,5 +136,16 @@ button:focus-visible {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@theme inline {
+  @keyframes aurora {
+  from {
+    backgroundPosition: 50% 50%, 50% 50%;
+    }
+  to {
+    backgroundPosition: 350% 50%, 350% 50%;
+    }
   }
 }

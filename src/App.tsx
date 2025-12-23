@@ -10,8 +10,9 @@ import { Contact } from "./components/sections/Contact";
 
 const App = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900">
-      <Navbar />
+    
+    <div className=" ">
+      {/* <Navbar /> */}
       <main className="flex-1 pt-16 space-y-16 sm:space-y-24">
         <section id="home">
           <Hero />
