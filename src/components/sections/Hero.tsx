@@ -2,7 +2,7 @@ import { profile } from "../../data/profile";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative w-full overflow-hidden">
+    <section id="home" className="relative w-full h-[120vh] overflow-hidden">
       {/* Background vignette / soft glow */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
@@ -28,14 +28,14 @@ const Hero = () => {
             </h1>
 
             {/* Optional small subtitle (your title) */}
-            <p className="max-w-xl text-base text-white/70 sm:text-lg">
+            {/* <p className="max-w-xl text-base text-white/70 sm:text-lg">
               {profile.title}
-            </p>
+            </p> */}
 
             {/* Summary paragraph */}
-            <p className="max-w-xl text-base leading-relaxed text-white/70">
+            {/* <p className="max-w-xl text-base leading-relaxed text-white/70">
               {profile.summary}
-            </p>
+            </p> */}
 
             {/* Buttons */}
             <div className="flex flex-wrap items-center gap-4">
@@ -55,21 +55,7 @@ const Hero = () => {
                 </svg>
               </a>
 
-              <a
-                href="#about"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white/80 backdrop-blur transition hover:bg-white/10"
-              >
-                Scroll down
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M12 5v14m0 0 6-6m-6 6-6-6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </a>
+              
             </div>
           </div>
 

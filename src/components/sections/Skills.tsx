@@ -1,63 +1,209 @@
-import { technicalSkills, softSkills, languages } from "../../data/skills";
+// Skills.jsx
+import LogoLoop from "../LogoLoop";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiPostgresql,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiPhp,
+  SiC,
+  SiCplusplus,
+  
+} from "react-icons/si";
 
-export const Skills = () => {
+import { FaJava } from "react-icons/fa"; 
+// Your skills data (use yours or import from profile if you prefer)
+const skills = {
+  languages: ["Java", "SQL", "C", "C++", "JavaScript", "PHP", "HTML", "CSS"],
+  frameworks: ["MERN Stack", "Next.js"],
+};
+
+const languageLogos = [
+  { node: <FaJava />, title: "Java", href: "https://www.oracle.com/java/" },
+  {
+    node: <SiJavascript />,
+    title: "JavaScript",
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  { node: <SiPhp />, title: "PHP", href: "https://www.php.net/" },
+  {
+    node: <SiHtml5 />,
+    title: "HTML",
+    href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  },
+  {
+    node: <SiCss3 />,
+    title: "CSS",
+    href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  },
+  {
+    node: <SiC />,
+    title: "C",
+    href: "https://en.wikipedia.org/wiki/C_(programming_language)",
+  },
+  { node: <SiCplusplus />, title: "C++", href: "https://isocpp.org/" },
+];
+
+const frameworkLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
+  { node: <SiExpress />, title: "Express", href: "https://expressjs.com" },
+  { node: <SiMongodb />, title: "MongoDB", href: "https://www.mongodb.com" },
+  { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com" },
+  {
+    node: <SiPostgresql />,
+    title: "PostgreSQL",
+    href: "https://www.postgresql.org",
+  },
+  {
+    node: <SiTypescript />,
+    title: "TypeScript",
+    href: "https://www.typescriptlang.org",
+  },
+  {
+    node: <SiTailwindcss />,
+    title: "Tailwind CSS",
+    href: "https://tailwindcss.com",
+  },
+];
+
+const Pill = ({ children }) => (
+  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/75 backdrop-blur">
+    {children}
+  </span>
+);
+
+const Skills = () => {
   return (
-    <div className="section-container space-y-6">
-      <div>
-        <p className="section-subtitle">Skills</p>
-        <h2 className="section-title">Technical & Soft Skills</h2>
+    <section
+      id="skills"
+      className="relative w-full overflow-hidden py-20 sm:py-24"
+    >
+      {/* Background vignette / soft glow (matches Hero vibe) */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black" />
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="card space-y-4">
-          <h3 className="text-lg font-semibold text-white">Technical Skills</h3>
-          <SkillGroup label="Languages" items={technicalSkills.languages} />
-          <SkillGroup label="Frameworks & Libraries" items={technicalSkills.frameworks} />
-          <SkillGroup label="Concepts" items={technicalSkills.concepts} />
-          <SkillGroup label="Tools" items={technicalSkills.tools} />
-        </div>
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+          {/* LEFT */}
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
+              <span className="h-2 w-2 rounded-full bg-sky-400" />
+              <span className="text-sm text-white/80">Skills & Stack</span>
+            </div>
 
-        <div className="card space-y-4">
-          <h3 className="text-lg font-semibold text-white">Soft Skills & Languages</h3>
-          <SkillGroup label="Soft Skills" items={softSkills} />
-          <div>
-            <p className="text-xs font-semibold text-slate-400 uppercase mb-1">
-              Languages
+            <h2 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl">
+              Tools I use to build{" "}
+              <span className="text-white/60">fast, modern</span>
+              <br />
+              <span className="text-white/60">web experiences</span>
+            </h2>
+
+            <p className="max-w-xl text-base leading-relaxed text-white font-semibold">
+              A practical stack for responsive UI, clean APIs, and scalable
+              projects. Here are the languages and frameworks I’m comfortable
+              with.
             </p>
-            <ul className="flex flex-wrap gap-2">
-              {languages.map((lang) => (
-                <li
-                  key={lang.name}
-                  className="px-3 py-1 rounded-full bg-slate-800/80 text-xs text-slate-100 border border-slate-700/70"
-                >
-                  {lang.name} &mdash; {lang.level}
-                </li>
-              ))}
-            </ul>
+
+            {/* Pills */}
+            <div className="space-y-4">
+              <div className="space-y-2">
+                
+              </div>
+
+              <div className="space-y-2">
+                
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT — Loop Card */}
+          <div className="relative mx-auto w-full max-w-xl lg:ml-auto">
+            {/* floating dot like Hero */}
+            <div className="pointer-events-none absolute right-10 top-10 h-6 w-6 rounded-full bg-white/35" />
+
+            <div className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-gradient-to-b from-indigo-950/60 via-slate-900/40 to-slate-950/60 shadow-2xl">
+              {/* subtle inner glow */}
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12),transparent_55%)]" />
+
+              <div className="relative p-7 sm:p-9">
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold text-white/80">
+                    Core Technologies
+                  </p>
+                 
+                </div>
+
+                <div className="mt-6 space-y-6">
+                  {/* Horizontal loop */}
+                  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <LogoLoop
+                      logos={frameworkLogos}
+                      speed={50}
+                      direction="left"
+                      logoHeight={42}
+                      gap={36}
+                      hoverSpeed={20}
+                      scaleOnHover
+                      fadeOut
+                      fadeOutColor="#000000"
+                      ariaLabel="Frameworks and tools"
+                    />
+                  </div>
+
+                  {/* Second loop (languages) */}
+                  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <LogoLoop
+                      logos={languageLogos}
+                      speed={50}
+                      direction="right"
+                      logoHeight={40}
+                      gap={34}
+                      hoverSpeed={18}
+                      scaleOnHover
+                      fadeOut
+                      fadeOutColor="#000000"
+                      ariaLabel="Programming languages"
+                    />
+                  </div>
+
+                  {/* Small stat row */}
+                  <div className="grid grid-cols-2 gap-4 pt-2">
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                      <p className="text-xs text-white/60">Languages</p>
+                      <p className="mt-1 text-2xl font-bold text-white">
+                        {skills.languages.length}
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                      <p className="text-xs text-white/60">Frameworks</p>
+                      <p className="mt-1 text-2xl font-bold text-white">
+                        {skills.frameworks.length}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* tiny bottom glow */}
+            <div className="pointer-events-none absolute -bottom-10 left-1/2 h-24 w-72 -translate-x-1/2 rounded-full bg-sky-400/10 blur-3xl" />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-type SkillGroupProps = {
-  label: string;
-  items: string[];
-};
-
-const SkillGroup = ({ label, items }: SkillGroupProps) => (
-  <div>
-    <p className="text-xs font-semibold text-slate-400 uppercase mb-1">{label}</p>
-    <div className="flex flex-wrap gap-2">
-      {items.map((item) => (
-        <span
-          key={item}
-          className="px-3 py-1 rounded-full bg-slate-800/80 text-xs text-slate-100 border border-slate-700/70"
-        >
-          {item}
-        </span>
-      ))}
-    </div>
-  </div>
-);
+export { Skills };

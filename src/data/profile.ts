@@ -1,9 +1,12 @@
+import sulakshanaImage from "../assets/sulakshana.png";
+
 export const profile = {
   name: "Sulakshana Kalugamage",
   title: "Undergraduate at SLIIT City Uni",
   location: "Ratnapura, Sri Lanka",
   phone: "+94 70 312 1957",
   email: "sulakshana.asus@gmail.com",
+  image: sulakshanaImage,
   // TODO: replace with your real links
   linkedin: "https://www.linkedin.com/in/your-profile",
   github: "https://github.com/your-username",

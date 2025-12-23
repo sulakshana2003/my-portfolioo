@@ -7,13 +7,16 @@ import { Projects } from "./components/sections/Projects";
 import { Education } from "./components/sections/Education";
 import { Certifications } from "./components/sections/Certifications";
 import { Contact } from "./components/sections/Contact";
+import Welcome from "./components/sections/Welcome";
 
 const App = () => {
   return (
-    
     <div className=" ">
-      {/* <Navbar /> */}
-      <main className="flex-1 pt-16 space-y-16 sm:space-y-24">
+      <Navbar />
+      <main className="">
+        <section id="Welcome">
+          <Welcome />
+        </section>
         <section id="home">
           <Hero />
         </section>

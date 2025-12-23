@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App.tsx";
 import LenisProvider from "./components/provider/LenisProvider.tsx";
 import {AuroraBackground} from "./components/ui/shadcn-io/aurora-background/index.tsx";
+import BlackBackgroundWrapper from "./components/BlackBackgroundWrapper.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <LenisProvider>
-      <AuroraBackground>
-        <App />
-      </AuroraBackground>
+      
+        <BlackBackgroundWrapper>
+          <App />
+        </BlackBackgroundWrapper>
+      
     </LenisProvider>
   </StrictMode>
 );
