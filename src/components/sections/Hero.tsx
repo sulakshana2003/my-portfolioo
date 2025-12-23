@@ -2,7 +2,7 @@ import { profile } from "../../data/profile";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative w-full h-[120vh] overflow-hidden">
+    <section id="home" className="relative w-full min-h-full overflow-hidden">
       {/* Background vignette / soft glow */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
@@ -15,8 +15,10 @@ const Hero = () => {
           <div className="space-y-8">
             {/* Available pill */}
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              <span className="text-sm text-white/80">Available for work</span>
+              <p className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.24em] text-slate-300/70">
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                Available for work
+              </p>
             </div>
 
             {/* Big headline like screenshot */}
@@ -54,8 +56,6 @@ const Hero = () => {
                   />
                 </svg>
               </a>
-
-              
             </div>
           </div>
 

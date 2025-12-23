@@ -12,7 +12,7 @@ import Welcome from "./components/sections/Welcome";
 const App = () => {
   return (
     <div className=" ">
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="">
         <section id="Welcome">
           <Welcome />

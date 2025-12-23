@@ -2,7 +2,7 @@ import { profile } from "../../data/profile";
 
 export const About = () => {
   return (
-    <section id="about" className="relative w-full py-16 sm:py-24">
+    <section id="about" className="relative w-full min-h-full py-16 sm:py-24">
       {/* subtle background glow (optional but looks really good) */}
       <div
         aria-hidden
@@ -26,10 +26,16 @@ export const About = () => {
           />
 
           <header className="space-y-2">
-            <p className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.24em] text-slate-300/70">
+            {/* <p className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.24em] text-slate-300/70">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
               Profile
-            </p>
+            </p> */}
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
+              <p className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.24em] text-slate-300/70">
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                Profile
+              </p>
+            </div>
 
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
               About <span className="text-white/60">Me</span>
