@@ -1,4 +1,9 @@
 // projects.ts
+import cloudnovaImg from "../assets/cloudnovaH.png";
+import cloudnovaImg2 from "../assets/cblog.png";
+import cloudnovaImg3 from "../assets/cproj.png";
+import ralahamiImg from "../assets/RalaHamiF.png";
+import YummyImg from "../assets/yummyH.png"; 
 
 export type Project = {
   title: string;
@@ -7,7 +12,8 @@ export type Project = {
   points: string[];
 
   // ✅ added (placeholders supported)
-  image?: string; // local path OR url
+  image?: string; // primary image (thumbnail/cover)
+  images?: string[]; // ✅ added: gallery (3 images)
   demoUrl?: string; // live link
   repoUrl?: string; // github link
   year?: string; // "2025"
@@ -17,66 +23,34 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Student Management System (MERN)",
-    techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT"],
+    title: "CloudNova — Company Portfolio (MERN)",
+    techStack: [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "JWT",
+      "Tailwind CSS",
+      "EmailJS/Nodemailer",
+    ],
     description:
-      "Full-stack web application to manage student records, courses, and grades.",
+      "Modern company portfolio website for CloudNova with service pages, project/case-study showcase, and a contact workflow.",
     points: [
-      "Implemented RESTful APIs for CRUD operations with JWT-based authentication and role-based access (admin/teacher/student).",
-      "Optimized NoSQL schemas and indexing, improving query response times by about 30%.",
+      "Built a responsive React UI with clean sections (Hero, Services, About, Projects, Testimonials, Contact) and smooth animations for a modern brand feel.",
+      "Developed Express + MongoDB REST APIs to manage portfolio content (projects/services/testimonials) with JWT-based admin access for secure updates.",
+      "Implemented a contact form with validation + email notifications and deployed the app with environment-based config and production-ready routing.",
     ],
 
-    // ✅ placeholders
-    image: "/projects/student-management.png",
-    demoUrl: "https://your-demo-link.com",
-    repoUrl: "https://github.com/your-username/your-repo",
+    image: cloudnovaImg,
+    images: [cloudnovaImg, cloudnovaImg2, cloudnovaImg3],
+    demoUrl:
+      "https://cloud-nova-portfolio-git-main-sulakshana-kalugamages-projects.vercel.app?_vercel_share=KBHRddu0GHX2DNPB9Gm8sOYTGItuVQyE",
+    repoUrl: "https://github.com/sulakshana2003/CloudNova-Portfolio",
     year: "2025",
     role: "Full-Stack Developer",
-    category: "Web App",
+    category: "Company Portfolio / Web App",
   },
-  {
-    title: "Pet Guessing Game (Android)",
-    techStack: ["Java", "Kotlin", "Android Studio", "SQLite"],
-    description:
-      "Interactive Android game using randomized pet profiles and local persistence.",
-    points: [
-      "Built core game logic with randomization algorithms and Material Design UI.",
-      "Used SQLite for local storage and added JUnit + instrumented UI tests achieving ~85% code coverage.",
-    ],
 
-    // ✅ placeholders
-    image: "/projects/pet-guessing-game.png",
-    demoUrl: "https://your-demo-link.com",
-    repoUrl: "https://github.com/your-username/your-repo",
-    year: "2024",
-    role: "Android Developer",
-    category: "Mobile App",
-  },
-  {
-    title: "Yummy Food Delivery Website",
-    techStack: [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "Bootstrap",
-      "Node.js",
-      "MongoDB",
-    ],
-    description:
-      "Responsive food delivery site with online ordering and real-time order status.",
-    points: [
-      "Front-end optimized for mobile with 95+ Lighthouse performance score.",
-      "Implemented Node.js/Express backend with MongoDB for menu, cart and order workflows plus Stripe payments and WebSocket-based live order status.",
-    ],
-
-    // ✅ placeholders
-    image: "/projects/yummy-food.png",
-    demoUrl: "https://your-demo-link.com",
-    repoUrl: "https://github.com/your-username/your-repo",
-    year: "2024",
-    role: "Full-Stack Developer",
-    category: "Web App",
-  },
   {
     title: "Ralahami.lk — Restaurant Ordering & Ops Platform",
     techStack: [
@@ -98,12 +72,38 @@ export const projects: Project[] = [
       "Integrated Stripe (sandbox) and Cash-on-Delivery with audit logs and CI/CD deployments.",
     ],
 
-    // ✅ placeholders
-    image: "/projects/ralahami.png",
-    demoUrl: "https://your-demo-link.com",
-    repoUrl: "https://github.com/your-username/your-repo",
+    image: ralahamiImg,
+    images: [ralahamiImg, ralahamiImg, ralahamiImg],
+    demoUrl:
+      "https://ralahami-website-f35c.vercel.app?_vercel_share=dFKFq3UA7A6SqzHpq71h4ZO2teCUtiGc",
+    repoUrl: "https://github.com/sulakshana2003/Ralahami-website",
     year: "2025",
     role: "Full-Stack Developer",
     category: "SaaS / Platform",
+  },
+  {
+    title: "Yummy Food Delivery Website",
+    techStack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "Node.js",
+      "MongoDB",
+    ],
+    description:
+      "Responsive food delivery site with online ordering and real-time order status.",
+    points: [
+      "Front-end optimized for mobile with 95+ Lighthouse performance score.",
+      "Implemented Node.js/Express backend with MongoDB for menu, cart and order workflows plus Stripe payments and WebSocket-based live order status.",
+    ],
+
+    image: YummyImg,
+    images: [YummyImg, YummyImg, YummyImg],
+    demoUrl: "https://your-demo-link.com",
+    repoUrl: "https://github.com/sulakshana2003/YummYDemo-2.0",
+    year: "2024",
+    role: "Full-Stack Developer",
+    category: "Web App",
   },
 ];

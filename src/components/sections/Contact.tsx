@@ -46,7 +46,8 @@ export const Contact = () => {
           </div>
 
           <h2 className="mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
-            Let&apos;s Work Together
+            Let&apos;s Work
+            <span className="text-white/60"> Together</span>
           </h2>
           <p className="mt-3 max-w-2xl text-white/70">
             I&apos;m actively looking for an internship or junior software
@@ -188,7 +189,6 @@ export const Contact = () => {
                 <h3 className="text-lg font-semibold text-white">
                   Send a message
                 </h3>
-                
               </div>
 
               <div className="mt-5 space-y-4">
@@ -268,8 +268,6 @@ export const Contact = () => {
                   <FiSend />
                   Send Message
                 </motion.button>
-
-                
               </div>
             </div>
           </motion.form>

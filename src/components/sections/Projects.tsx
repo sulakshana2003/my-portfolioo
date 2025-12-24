@@ -1,5 +1,7 @@
 // Projects.jsx
 import { motion } from "framer-motion";
+import HoverImageSlider from "../../components/HoverImageSlider.jsx";
+
 import {
   FiGithub,
   FiExternalLink,
@@ -69,13 +71,10 @@ export const Projects = () => {
 
           <div className="mt-5 flex items-end justify-between gap-4">
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
-              What I&apos;ve Built
+              What I&apos;ve <span className="text-white/60">Built</span>
             </h2>
 
-            <div className="hidden sm:flex items-center gap-2 text-xs text-white/50">
-              <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
-              <span>Hover cards for details</span>
-            </div>
+            <div className="hidden sm:flex items-center gap-2 text-xs text-white/50"></div>
           </div>
 
           <p className="mt-3 max-w-2xl text-white/70">
@@ -129,15 +128,16 @@ export const Projects = () => {
               {/* Image */}
               <div className="relative aspect-[16/9] overflow-hidden border-b border-white/10">
                 <motion.div variants={imageWrap} className="h-full w-full">
-                  <img
-                    src={
-                      project.image ??
-                      "https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1200&q=70"
+                  <HoverImageSlider
+                    images={
+                      project.images?.length
+                        ? project.images
+                        : [
+                            project.image ??
+                              "https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1200&q=70",
+                          ]
                     }
                     alt={project.title}
-                    className="h-full w-full object-cover opacity-90"
-                    loading="lazy"
-                    draggable={false}
                   />
                 </motion.div>
 
@@ -188,12 +188,12 @@ export const Projects = () => {
 
                 {/* title overlay */}
                 <div className="absolute left-0 right-0 bottom-0 p-5">
-                  <h3 className="text-lg font-semibold text-white">
+                  {/* <h3 className="text-lg font-semibold text-white">
                     {project.title}
                   </h3>
                   <p className="mt-1 text-sm text-white/70 line-clamp-2">
                     {project.description}
-                  </p>
+                  </p> */}
                 </div>
               </div>
 
@@ -201,6 +201,12 @@ export const Projects = () => {
               <div className="p-5">
                 {/* meta badges */}
                 <div className="mb-4 flex flex-wrap gap-2">
+                  <h3 className="text-lg font-semibold text-white">
+                    {project.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-white/70 line-clamp-2">
+                    {project.description}
+                  </p>
                   {project.year && (
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wider text-white/75">
                       <FiCalendar className="text-white/60" />
